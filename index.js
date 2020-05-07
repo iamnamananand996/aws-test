@@ -17,7 +17,9 @@ con.connect(function (err) {
 	console.log("Connect to database");
 });
 
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+	res.send({ msg: "working " }).status(200);
+});
 
 app.listen(port, () =>
 	console.log(`Example app listening at http://localhost:${port}`)
