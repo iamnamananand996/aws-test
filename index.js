@@ -18,6 +18,10 @@ con.connect(function (err) {
 });
 
 app.get("/", (req, res) => {
+	con.query("SELECT * FROM `ordersdata`", function (error, results, fields) {
+		if (error) throw error;
+		console.log("The solution is: ", results);
+	});
 	res.send({ msg: "working " }).status(200);
 });
 
